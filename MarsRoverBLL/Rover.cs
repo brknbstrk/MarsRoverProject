@@ -6,14 +6,14 @@
     {
         private int plateauRoverPositionX;
         private int plateauRoverPositionY;
-        private IPlateau _plateau;
+        private IPlateau plateau;
         private Direction Direction;
-        public Rover(int startX, int startY, Direction _direction, IPlateau plateau)
+        public Rover(int startX, int startY, Direction _direction, IPlateau _plateau)
         {
             this.plateauRoverPositionX = startX;
             this.plateauRoverPositionY = startY;
             this.Direction = _direction;
-            this._plateau = plateau;
+            this.plateau = _plateau;
         }
         public void Move(string movesCommand)
         {
@@ -97,9 +97,9 @@
         }
         private void RangeControl()
         {
-            if (this.plateauRoverPositionX < 0 || this.plateauRoverPositionX > _plateau.xCoordinant || this.plateauRoverPositionY < 0 || this.plateauRoverPositionY > _plateau.yCoordinant)
+            if (this.plateauRoverPositionX < 0 || this.plateauRoverPositionX > plateau.xCoordinant || this.plateauRoverPositionY < 0 || this.plateauRoverPositionY > plateau.yCoordinant)
             {
-                Console.WriteLine($"Position can not be beyond bounderies (0 , 0) and ({_plateau.xCoordinant} , {_plateau.yCoordinant})");
+                Console.WriteLine($"Position can not be beyond bounderies (0 , 0) and ({plateau.xCoordinant} , {plateau.yCoordinant})");
             }
         }
         public string toString()
